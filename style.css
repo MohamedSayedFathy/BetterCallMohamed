@@ -29,6 +29,10 @@ body {
 .base-image {
   display: block;
   width: 100%;
+  height: auto;
+  max-height: 400px;
+  min-height: auto;
+  
   border-radius: 30px;
 }
 
@@ -40,8 +44,7 @@ body {
   width: 100%;   
   height: auto;
   max-height: 100px;
-  min-height: 30px;
-  border-radius: 40px; 
+  border-radius: 30px; 
   z-index: 10;   
 }
 
@@ -51,6 +54,7 @@ body {
   overflow: hidden;     
   scroll-snap-align: start;
   display: flex;
+  flex-direction: column; 
   justify-content: center;
   align-items: center;
 }
@@ -61,73 +65,60 @@ body {
   border-radius: 35px;
 }
 
-/* Image container with relative positioning to allow overlaying */
+/* Image container with relative positioning */
 .image-container {
   position: relative;
   width: 100%;
+  max-width: 90vw;
   border-radius: 30px;
-  margin: 0;
+  margin: 0 auto; /* Center the image */
   padding: 0;
+}
+
+/* Button container to hold navigation buttons below the image */
+.button-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 20px; 
 }
 
 /* Overlay container for the retro buttons */
 #retro-prev,
 #retro-next {
-  position: absolute;
+  position: relative; 
   z-index: 10;
   transition: all 0.3s ease-in-out;
-  bottom: 2%;  
-}
-
-/* "Previous" button on the left */
-#retro-prev {
-  left: 10%; 
-}
-
-/* "Next" button on the right */
-#retro-next {
-  right: 10%; 
 }
 
 /* Default retro button styling */
 .retro-btn {
   font-size: 18px;
-  padding: 12px 24px; 
   transition: all 0.3s ease-in-out;
 }
 
-/* Responsive adjustments for tablet screens */
+/* Tablets */
 @media (max-width: 768px) {
-  #retro-prev {
-    left: 0;
+  .base-image {
+    max-height: 40vh; 
   }
-  #retro-next {
-    right: 0;
+  .button-container {
+    gap: 10px; 
   }
   .retro-btn {
-    font-size: 16px;
-    
-  }
-  #retro-prev,
-  #retro-next {
-  bottom: -10%;
+    height: 37px;
+    font-size: 10.5px;
+    line-height: 32.5px;
   }
 }
 
-/* Responsive adjustments for mobile screens */
+/* Mobile screens */
 @media (max-width: 576px) {
-  #retro-prev {
-    left: -20%;
+  .base-image {
+    height: 20vh; 
   }
-  #retro-next {
-    right: -20%;
+  .button-container {
+    gap: 5px;
   }
-  .retro-btn {
-    margin: 10px;
-    transform: scale(0.6);
-  }
-  #retro-prev,
-  #retro-next {
-  bottom: -20%;
-  }
+
 }

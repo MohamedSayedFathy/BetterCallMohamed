@@ -1,19 +1,24 @@
 <div class="scroll-container">
     
     <!-- Section 1: Logo -->
-    <section class="full-screen-section p-3 m-4">
+    <section class="full-screen-section p-3 m-4 p-md-1">
       <div class="container shadow-lg text-center logo" style="padding: 0; padding-top: 50px;">
         <img class="img-fluid" src="../images/logo.png" alt="Website Logo" style="border-radius: 30px;">
       </div>
     </section>
         
     <!-- Section 2: Desert Image with Retro Buttons -->
-    <section class="full-screen-section p-3 m-4">
-      <div class="container shadow-lg text-center image-container" style="padding: 0; border-radius: 30px;">
-        <div class="image-overlay-container">
-            <img id="baseImg" class="img-fluid base-image" src="../images/SaulGodmanInDesert.jpg" alt="Desert Image" style="border-radius: 30px; min-width: 400px; max-width: 600px; max-height: 500px ;">
-            <img id="overlayedImg" class="img-fluid overlay-gif" src="" />
-        </div>      
+    <section class="full-screen-section p-3 m-4 p-md-0">
+      <div class="container shadow-lg text-center">
+        <div class="row justify-content-center">
+          <!-- Image Container -->
+          <div class="col-12 col-md-8 col-lg-6 text-center">
+            <div class="image-container">
+              <img id="baseImg" class="img-fluid base-image" src="../images/SaulGodmanInDesert.jpg" alt="Desert Image">
+              <img id="overlayedImg" class="img-fluid overlay-gif" src="" />
+            </div>      
+          </div>
+        </div>     
           <!-- Retro Button: Previous -->
           <div id="retro-prev" class="wrapper retro-btn primary">
             <a class="btn btn-lg btn-md btn-sm">
@@ -45,7 +50,7 @@
     </section>
     <script>
         let index = 0;
-        let currentAudio = null; // Track currently playing audio
+        let currentAudio = null; 
     
         // Initialize speech bubbles array
         const bubbles = [];
