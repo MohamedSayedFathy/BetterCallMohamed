@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Template</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../style.css">
+  <!-- Retro Buttons CSS -->
+  <link rel="stylesheet" href="../assets/retroButtons/retro-buttons.css">
+  <!-- jQuery -->
+  <script src="../assets/jquery/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <div id="homePage"></div>
+
+  <script>
+    $(document).ready(function () {
+      // Load the entire home page content first.
+      $("#homePage").load("../pages/home.html", function() {
+        // Now that the home page (including retro buttons) is loaded,
+        // load the retro buttons JS script so it can attach event listeners.
+        $.getScript("../assets/retroButtons/retro-buttons.js")
+          .done(function() {
+            console.log("Retro Buttons JS loaded successfully!");
+          })
+          .fail(function(jqxhr, settings, exception) {
+            console.error("Failed to load retro-buttons.js");
+          });
+      });
+    });
+  </script>
+  
+  <!-- Bootstrap JS -->
+  <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

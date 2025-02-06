@@ -1,0 +1,133 @@
+/* Reset default margins/padding */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Full-page scroll container with snap behavior */
+.scroll-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+/* Background pattern for body */
+body {
+  background-image: url('./images/pattern.jpg');
+  background-repeat: repeat;
+  background-size: auto;
+}
+
+.image-overlay-container {
+  position: relative;  
+  display: inline-block;  
+}
+
+/* Base image stays in the normal flow */
+.base-image {
+  display: block;
+  width: 100%;
+  border-radius: 30px;
+}
+
+/* Overlay GIF is positioned absolutely */
+.overlay-gif {
+  position: absolute;
+  top: -15%;
+  left: 0;
+  width: 100%;   
+  height: auto;
+  max-height: 100px;
+  min-height: 30px;
+  border-radius: 40px; 
+  z-index: 10;   
+}
+
+/* Each section takes up the full viewport */
+.full-screen-section {
+  height: 100vh;        
+  overflow: hidden;     
+  scroll-snap-align: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Logo container styling */
+.logo {
+  background: #354B59;
+  border-radius: 35px;
+}
+
+/* Image container with relative positioning to allow overlaying */
+.image-container {
+  position: relative;
+  width: 100%;
+  border-radius: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Overlay container for the retro buttons */
+#retro-prev,
+#retro-next {
+  position: absolute;
+  z-index: 10;
+  transition: all 0.3s ease-in-out;
+  bottom: 2%;  
+}
+
+/* "Previous" button on the left */
+#retro-prev {
+  left: 10%; 
+}
+
+/* "Next" button on the right */
+#retro-next {
+  right: 10%; 
+}
+
+/* Default retro button styling */
+.retro-btn {
+  font-size: 18px;
+  padding: 12px 24px; 
+  transition: all 0.3s ease-in-out;
+}
+
+/* Responsive adjustments for tablet screens */
+@media (max-width: 768px) {
+  #retro-prev {
+    left: 0;
+  }
+  #retro-next {
+    right: 0;
+  }
+  .retro-btn {
+    font-size: 16px;
+    
+  }
+  #retro-prev,
+  #retro-next {
+  bottom: -10%;
+  }
+}
+
+/* Responsive adjustments for mobile screens */
+@media (max-width: 576px) {
+  #retro-prev {
+    left: -20%;
+  }
+  #retro-next {
+    right: -20%;
+  }
+  .retro-btn {
+    margin: 10px;
+    transform: scale(0.6);
+  }
+  #retro-prev,
+  #retro-next {
+  bottom: -20%;
+  }
+}
